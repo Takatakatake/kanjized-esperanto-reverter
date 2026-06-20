@@ -49,7 +49,7 @@ http://localhost:8501
 
 **入力例：**
 ```
-何时 西o 遇as 东方on 和 上置as 东方an 服on, 一 独a 语o 获as 二 观ojn.
+何时 西o 遇as 东on 和ᴷ 上置as 东an 衣on, 一 唯a 语o 获as 二 显ojn — 两 美ajn —, 和ᴷ 生成as 新a 解o.
 ```
 
 ### 3. 変換の実行
@@ -60,7 +60,7 @@ http://localhost:8501
 
 **出力例：**
 ```
-mi aŭdis, ke inter kontraŭpli ol semajno kaj de du multaj homoj inter kontraŭsamaj lokoj, ke kumino tre bone konvenas por la ŝafaĵa grandplado "jingisukan".
+kiam okcidento renkontas orienton kaj surmetas orientan veston, unu sola lingvo akiras du aspektojn — ambaŭ belajn —, kaj naskiĝas nova kompreno.
 ```
 
 ### 5. ダウンロード（オプション）

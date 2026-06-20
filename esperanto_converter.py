@@ -216,9 +216,8 @@ def render_sidebar() -> tuple[str, object | None]:
 
 def sample_text() -> str:
     return (
-        "何时 西o 遇as 东方on 和 上置as 东方an 服on, 一 独a 语o 获as 二 观ojn "
-        "— 两 美ajn —, 和 生成as 新a 懂o.\n"
-        "从 今, 我 试as 以 新a 汉字割当案 反复e 回す."
+        "何时 西o 遇as 东on 和ᴷ 上置as 东an 衣on, 一 唯a 语o 获as 二 显ojn "
+        "— 两 美ajn —, 和ᴷ 生成as 新a 解o."
     )
 
 
