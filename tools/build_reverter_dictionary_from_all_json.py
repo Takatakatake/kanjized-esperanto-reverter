@@ -40,18 +40,7 @@ def to_unicode_esperanto_root(value: str, fallback: str = "") -> str:
     return "".join(out).lower()
 
 
-def main() -> int:
-    if len(sys.argv) != 3:
-        print(
-            "Usage: tools/build_reverter_dictionary_from_all_json.py <all.json> <out.csv>",
-            file=sys.stderr,
-        )
-        return 2
-
-    in_path = Path(sys.argv[1])
-    out_path = Path(sys.argv[2])
-    data = json.loads(in_path.read_text(encoding="utf-8"))
-
+def rows_from_all_json(data: dict) -> list[dict[str, object]]:
     rows = []
     for index, item in enumerate(data.get("items", [])):
         kanji = str(item.get("body", "")).strip()
@@ -79,6 +68,10 @@ def main() -> int:
         )
 
     rows.sort(key=lambda row: (-len(row["kanji"]), row["priority"], row["kanji"], row["esperanto"]))
+    return rows
+
+
+def write_rows(rows: list[dict[str, object]], out_path: Path) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(
@@ -87,6 +80,21 @@ def main() -> int:
         )
         writer.writeheader()
         writer.writerows(rows)
+
+
+def main() -> int:
+    if len(sys.argv) != 3:
+        print(
+            "Usage: tools/build_reverter_dictionary_from_all_json.py <all.json> <out.csv>",
+            file=sys.stderr,
+        )
+        return 2
+
+    in_path = Path(sys.argv[1])
+    out_path = Path(sys.argv[2])
+    data = json.loads(in_path.read_text(encoding="utf-8"))
+    rows = rows_from_all_json(data)
+    write_rows(rows, out_path)
 
     print(f"wrote {len(rows)} rows to {out_path}")
     return 0

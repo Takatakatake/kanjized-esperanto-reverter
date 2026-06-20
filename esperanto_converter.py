@@ -25,6 +25,9 @@ DICTIONARY_SOURCES = {
     },
 }
 DEFAULT_DICTIONARY_ID = "pejvo-piv-20260620"
+CONVERTED_TEXT_KEY = "converted_text"
+CONVERTED_INPUT_KEY = "converted_input_text"
+CONVERTED_SOURCE_KEY = "converted_source_signature"
 
 
 @dataclass(frozen=True)
@@ -83,12 +86,17 @@ def read_assignment_csv(source) -> pd.DataFrame:
     return pd.DataFrame(data)
 
 
+@st.cache_data(show_spinner=False)
+def read_assignment_csv_from_path(path_text: str, mtime_ns: int) -> pd.DataFrame:
+    return read_assignment_csv(Path(path_text))
+
+
 def load_dictionary_source(source_id: str) -> pd.DataFrame:
     source = DICTIONARY_SOURCES[source_id]
     path = source["path"]
     if not path.exists():
         raise FileNotFoundError(f"Dictionary file was not found: {path}")
-    return read_assignment_csv(path)
+    return read_assignment_csv_from_path(str(path), path.stat().st_mtime_ns)
 
 
 def _priority(value, fallback: int) -> int:
@@ -131,6 +139,25 @@ def build_mapping_index(df: pd.DataFrame) -> MappingIndex:
         lengths_desc=sorted(by_length.keys(), reverse=True),
         entry_count=sum(len(bucket) for bucket in by_length.values()),
     )
+
+
+def dataframe_to_mapping_records(df: pd.DataFrame) -> tuple[tuple[str, str, str], ...]:
+    records: list[tuple[str, str, str]] = []
+    for _, row in df.iterrows():
+        records.append(
+            (
+                str(row.get("esperanto", "")),
+                str(row.get("kanji", "")),
+                str(row.get("priority", "")),
+            )
+        )
+    return tuple(records)
+
+
+@st.cache_data(show_spinner=False)
+def build_mapping_index_cached(records: tuple[tuple[str, str, str], ...]) -> MappingIndex:
+    df = pd.DataFrame(records, columns=["esperanto", "kanji", "priority"])
+    return build_mapping_index(df)
 
 
 def convert_kanji_esperanto_to_alphabet(text: str, mapping: MappingIndex) -> str:
@@ -177,6 +204,16 @@ def dictionary_label(source_id: str) -> str:
     if source_id == "custom":
         return "カスタム CSV"
     return DICTIONARY_SOURCES[source_id]["label"]
+
+
+def selected_source_signature(source_id: str, uploaded_file) -> str:
+    if source_id != "custom":
+        return source_id
+    if uploaded_file is None:
+        return "custom:none"
+    size = getattr(uploaded_file, "size", "")
+    name = getattr(uploaded_file, "name", "uploaded.csv")
+    return f"custom:{name}:{size}"
 
 
 def render_sidebar() -> tuple[str, object | None]:
@@ -233,6 +270,7 @@ def main() -> None:
 
     source_id, uploaded_file = render_sidebar()
     df = load_selected_dataframe(source_id, uploaded_file)
+    source_signature = selected_source_signature(source_id, uploaded_file)
 
     col1, col2 = st.columns(2)
     with col1:
@@ -250,11 +288,24 @@ def main() -> None:
             st.info("対応表を選択またはアップロードしてください。")
             return
 
-        mapping = build_mapping_index(df)
+        mapping = build_mapping_index_cached(dataframe_to_mapping_records(df))
         st.success(f"{dictionary_label(source_id)} を読み込みました")
 
         if st.button("変換する", type="primary", use_container_width=True):
             converted_text = convert_kanji_esperanto_to_alphabet(input_text, mapping)
+            st.session_state[CONVERTED_TEXT_KEY] = converted_text
+            st.session_state[CONVERTED_INPUT_KEY] = input_text
+            st.session_state[CONVERTED_SOURCE_KEY] = source_signature
+
+        converted_text = st.session_state.get(CONVERTED_TEXT_KEY, "")
+        result_is_current = (
+            st.session_state.get(CONVERTED_INPUT_KEY) == input_text
+            and st.session_state.get(CONVERTED_SOURCE_KEY) == source_signature
+        )
+
+        if converted_text:
+            if not result_is_current:
+                st.warning("入力または割当案が変わっています。再変換してください。")
             st.text_area(
                 "変換結果",
                 value=converted_text,
@@ -269,12 +320,13 @@ def main() -> None:
                 use_container_width=True,
             )
 
-            st.markdown("---")
-            col_stat1, col_stat2, col_stat3, col_stat4 = st.columns(4)
-            col_stat1.metric("入力文字数", len(input_text))
-            col_stat2.metric("出力文字数", len(converted_text))
-            col_stat3.metric("辞書エントリ数", mapping.entry_count)
-            col_stat4.metric("最長エントリ", f"{mapping.max_length}文字")
+            if result_is_current:
+                st.markdown("---")
+                col_stat1, col_stat2, col_stat3, col_stat4 = st.columns(4)
+                col_stat1.metric("入力文字数", len(input_text))
+                col_stat2.metric("出力文字数", len(converted_text))
+                col_stat3.metric("辞書エントリ数", mapping.entry_count)
+                col_stat4.metric("最長エントリ", f"{mapping.max_length}文字")
         else:
             st.info("変換ボタンをクリックしてください。")
 
