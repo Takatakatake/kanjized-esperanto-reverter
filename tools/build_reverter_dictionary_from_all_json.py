@@ -77,6 +77,7 @@ def write_rows(rows: list[dict[str, object]], out_path: Path) -> None:
         writer = csv.DictWriter(
             handle,
             fieldnames=["esperanto", "kanji", "priority", "source_root", "source_line"],
+            lineterminator="\n",
         )
         writer.writeheader()
         writer.writerows(rows)
