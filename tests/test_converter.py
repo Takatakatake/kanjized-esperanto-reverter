@@ -9,6 +9,7 @@ import pandas as pd
 from esperanto_converter import (
     build_mapping_index,
     convert_kanji_esperanto_to_alphabet,
+    dataframe_to_mapping_records,
     read_assignment_csv,
 )
 from build_reverter_dictionary_from_all_json import to_unicode_esperanto_root
@@ -94,6 +95,13 @@ def test_read_csv_5col_with_header(tmp_path):
     df = read_assignment_csv(path)
     assert list(df["esperanto"]) == ["bon"]
     assert list(df["kanji"]) == ["良"]
+
+
+def test_dataframe_to_mapping_records_is_behaviour_preserving():
+    # The vectorized records builder must produce the same (esperanto, kanji, priority) string
+    # tuples a per-row construction would, including int priority coerced to str.
+    df = pd.DataFrame({"esperanto": ["bon", "fic"], "kanji": ["良", "藻ᶠᶜ"], "priority": [0, 1]})
+    assert dataframe_to_mapping_records(df) == (("bon", "良", "0"), ("fic", "藻ᶠᶜ", "1"))
 
 
 def test_read_csv_2col_headerless(tmp_path):

@@ -36,6 +36,11 @@ CONVERTED_SOURCE_KEY = "converted_source_signature"
 # so this never breaks a match; kanji and superscript identifiers (ᴬᴰ…) are left untouched.
 _ASCII_LOWER = str.maketrans(string.ascii_uppercase, string.ascii_lowercase)
 
+# Defensive cap for user-uploaded custom dictionaries (the bundled dict is ~0.17 MB).
+# Streamlit's default maxUploadSize is 200 MB; a few-MB CSV can still hold millions of rows
+# and freeze the worker, so reject oversized uploads before parsing.
+MAX_UPLOAD_BYTES = 5 * 1024 * 1024
+
 
 @dataclass(frozen=True)
 class MappingEntry:
@@ -149,16 +154,15 @@ def build_mapping_index(df: pd.DataFrame) -> MappingIndex:
 
 
 def dataframe_to_mapping_records(df: pd.DataFrame) -> tuple[tuple[str, str, str], ...]:
-    records: list[tuple[str, str, str]] = []
-    for _, row in df.iterrows():
-        records.append(
-            (
-                str(row.get("esperanto", "")),
-                str(row.get("kanji", "")),
-                str(row.get("priority", "")),
-            )
-        )
-    return tuple(records)
+    # Vectorized column extraction instead of df.iterrows() (which materialises a Series per
+    # row). This builds the cache key on every Streamlit rerun, so it must be cheap; the
+    # tuple output is byte-identical to the previous per-row construction.
+    def column(name: str) -> list[str]:
+        if name in df.columns:
+            return [str(value) for value in df[name].tolist()]
+        return [""] * len(df)
+
+    return tuple(zip(column("esperanto"), column("kanji"), column("priority")))
 
 
 @st.cache_data(show_spinner=False)
@@ -198,6 +202,13 @@ def load_selected_dataframe(source_id: str, uploaded_file) -> pd.DataFrame | Non
     try:
         if source_id == "custom":
             if uploaded_file is None:
+                return None
+            size = getattr(uploaded_file, "size", 0) or 0
+            if size > MAX_UPLOAD_BYTES:
+                st.error(
+                    f"アップロードされたCSVが大きすぎます（{size / 1024 / 1024:.1f} MB）。"
+                    f"{MAX_UPLOAD_BYTES // 1024 // 1024} MB 以下にしてください。"
+                )
                 return None
             return read_assignment_csv(uploaded_file)
         return load_dictionary_source(source_id)
@@ -350,6 +361,8 @@ def main() -> None:
             - 旧スニペット最小 CSV とカスタム CSV も選択できます。
             - 上付き識別子を含む漢字表記を、長いものから優先して戻します。
             - 同じ長さの候補は `priority` の小さいものを優先します。
+            - 注意: 漢字には語根の区切りが無いため、隣接語根が連結して別の長いキーと一致する
+              凝集複合語（例: 酸乳 = acid+lakt が jogurt と一致）は別の語に戻ることがあります。
             """
         )
 
