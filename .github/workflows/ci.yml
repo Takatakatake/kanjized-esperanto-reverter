@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout reverter
+        uses: actions/checkout@v4
+        with:
+          path: kanjized-esperanto-reverter
+      # The sync check reads ../kanji-esperanto-monaco/all.json, so both repos must sit
+      # side by side. Check the upstream Monaco repo out as a sibling directory.
+      - name: Checkout Monaco (upstream dictionary source)
+        uses: actions/checkout@v4
+        with:
+          repository: Takatakatake/kanji-esperanto-monaco
+          path: kanji-esperanto-monaco
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        working-directory: kanjized-esperanto-reverter
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pytest
+      - name: Run unit tests
+        working-directory: kanjized-esperanto-reverter
+        run: python -m pytest -q
+      - name: Verify the bundled CSV is in sync with Monaco all.json
+        working-directory: kanjized-esperanto-reverter
+        run: python tools/check_dictionary_sync.py

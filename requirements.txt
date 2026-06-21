@@ -1,0 +1,5 @@
+# Reverter runtime dependencies.
+# Tested with Python 3.8.18 / streamlit 1.40.1 / pandas 2.0.3.
+# Bounded to the current majors for reproducible deploys while allowing patch updates.
+streamlit>=1.40,<2
+pandas>=2.0,<3

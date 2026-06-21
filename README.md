@@ -102,7 +102,9 @@ python3 tools/build_reverter_dictionary_from_all_json.py ../kanji-esperanto-mona
 python3 tools/check_dictionary_sync.py
 ```
 
-このチェックでは、CSVの完全一致と現在の例文の戻し変換を確認します。
+このチェックでは、CSVの完全一致・現在の例文の戻し変換・エスペラント語根に x-system / `^` 表記の変換漏れがないこと（例: `igx` が `iĝ` に変換済み）を確認します。`.github/workflows/ci.yml` で push / PR 時に自動実行され、Monaco 側 `all.json` との不一致を検知します。
+
+> **生成CSVの列について**: 上記コマンドで生成される `data/pejvo_piv_20260620_reverter.csv` は 5 列（`esperanto,kanji,priority,source_root,source_line`）です。アプリが変換に使うのは先頭 3 列（`esperanto,kanji,priority`）で、`source_root`/`source_line` は同期チェック用のメタ情報です。カスタム CSV をアップロードする場合は上記「CSVファイル形式」の 3 列だけで構いません。
 
 ### 特殊文字について
 同じ漢字が複数の語根に対応する場合、上付き識別子で区別します：
@@ -119,8 +121,8 @@ bangi,藻ᴮ
 2. 入力文を1文字ずつ走査
 3. 上付き識別子を含む漢字表記を、長いものから優先して語根へ変換
 4. 同じ長さの候補は `priority` の小さいものを優先
-5. 変換されない文字、アルファベット、数字、記号はそのまま保持
-6. 最終的にすべて小文字に変換
+5. 変換されない文字、アルファベット、数字、記号はそのまま残す
+6. 最終的に出力全体を小文字に変換する（5 で残した文字も小文字化されるため、入力の大文字は保持されない）
 
 ## トラブルシューティング
 

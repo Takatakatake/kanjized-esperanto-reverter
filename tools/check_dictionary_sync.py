@@ -66,6 +66,22 @@ def check_csv_sync(monaco_all_path: Path, csv_path: Path) -> list[str]:
     return errors
 
 
+def check_no_xsystem_residue(monaco_all_path: Path) -> list[str]:
+    """Esperanto roots must be real Unicode, never x-system/caret leftovers (e.g. 'igx' for 'iĝ')."""
+    data = json.loads(monaco_all_path.read_text(encoding="utf-8"))
+    bad = sorted({
+        str(row["esperanto"])
+        for row in rows_from_all_json(data)
+        if "x" in str(row["esperanto"]) or "^" in str(row["esperanto"])
+    })
+    if bad:
+        return [
+            f"{len(bad)} esperanto root(s) still contain x-system/caret markers "
+            f"instead of Unicode diacritics: {', '.join(bad[:10])}"
+        ]
+    return []
+
+
 def check_sample_conversion(csv_path: Path) -> list[str]:
     df = read_assignment_csv(csv_path)
     mapping = build_mapping_index(df)
@@ -92,6 +108,7 @@ def main() -> int:
         return 1
 
     errors.extend(check_csv_sync(args.monaco_all, args.csv))
+    errors.extend(check_no_xsystem_residue(args.monaco_all))
     errors.extend(check_sample_conversion(args.csv))
     if errors:
         for error in errors:

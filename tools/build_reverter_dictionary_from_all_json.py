@@ -9,7 +9,12 @@ import sys
 from pathlib import Path
 
 
-ESPERANTO_CARET_MAP = {
+# Esperanto diacritic letters written as a base letter + a marker. Monaco's sourceRoot
+# uses BOTH the h-system caret form (g^ -> ĝ) and the x-system form (gx -> ĝ); we must
+# restore both to real Unicode so the reverter's roots are valid Esperanto (e.g. the root
+# "igx" is iĝ, not a literal "igx"). Esperanto has no native letter x, so an x right after
+# c/g/h/j/s/u is always an x-system marker.
+ESPERANTO_DIGRAPH_MAP = {
     "c": "ĉ",
     "g": "ĝ",
     "h": "ĥ",
@@ -29,8 +34,10 @@ def to_unicode_esperanto_root(value: str, fallback: str = "") -> str:
     i = 0
     while i < len(root):
         ch = root[i]
-        if i + 1 < len(root) and root[i + 1] == "^":
-            mapped = ESPERANTO_CARET_MAP.get(ch.lower())
+        nxt = root[i + 1] if i + 1 < len(root) else ""
+        # Scan left-to-right: a marker (^ or x) modifies the single letter before it.
+        if nxt in ("^", "x", "X"):
+            mapped = ESPERANTO_DIGRAPH_MAP.get(ch.lower())
             if mapped:
                 out.append(mapped)
                 i += 2
