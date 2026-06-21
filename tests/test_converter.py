@@ -55,15 +55,32 @@ def test_passthrough_and_lowercase():
 
 
 def test_priority_tiebreak_lower_priority_wins():
-    mapping = _mapping([("high", "同", 1), ("low", "同", 10)])
+    # Order rows so the priority winner is NOT also the source-order winner: 'low' (priority 10)
+    # comes first by source order, but 'high' (priority 1) must still win on priority. This
+    # isolates the tie-break — the test would fail if priority were dropped from the sort key.
+    mapping = _mapping([("low", "同", 10), ("high", "同", 1)])
     assert convert_kanji_esperanto_to_alphabet("同", mapping) == "high"
 
 
 def test_dio_reverts_after_comma_fix():
-    # Regression for the 神ᴰ, trailing-comma artifact: clean 神ᴰ must reverse to dio.
+    # Regression for the 神ᴰ, trailing-comma artifact (stripped in the Monaco build tool):
+    # with the clean key 神ᴰ, realistic input 神ᴰ reverses to dio.
     mapping = _mapping([("dio", "神ᴰ", 0), ("di", "神", 1)])
     assert convert_kanji_esperanto_to_alphabet("神ᴰ", mapping) == "dio"
     assert convert_kanji_esperanto_to_alphabet("神", mapping) == "di"
+    # Document WHY stripping matters: if the comma had leaked into the key (神ᴰ,), realistic
+    # input 神ᴰ (no comma) would NOT reach dio — it falls back to 神 -> di plus a leftover ᴰ.
+    buggy = _mapping([("dio", "神ᴰ,", 0), ("di", "神", 1)])
+    assert convert_kanji_esperanto_to_alphabet("神ᴰ", buggy) != "dio"
+
+
+def test_correlative_uppercase_vowel_still_matches():
+    # Regression for case-sensitivity: an uppercased ASCII suffix vowel (sentence-start /
+    # auto-capitalize) must still match the lowercase-stored correlative key.
+    mapping = _mapping([("ĉio", "全o", 0), ("integr", "全", 1), ("kia", "何a", 0)])
+    assert convert_kanji_esperanto_to_alphabet("全o", mapping) == "ĉio"
+    assert convert_kanji_esperanto_to_alphabet("全O", mapping) == "ĉio"
+    assert convert_kanji_esperanto_to_alphabet("何A", mapping) == "kia"
 
 
 # --- read_assignment_csv: header detection / column mapping ---------------------------

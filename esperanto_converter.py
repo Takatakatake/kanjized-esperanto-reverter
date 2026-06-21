@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import string
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List
@@ -28,6 +29,12 @@ DEFAULT_DICTIONARY_ID = "pejvo-piv-20260620"
 CONVERTED_TEXT_KEY = "converted_text"
 CONVERTED_INPUT_KEY = "converted_input_text"
 CONVERTED_SOURCE_KEY = "converted_source_signature"
+
+# Fold ONLY ASCII A-Z. The 20 correlative keys (何a/全o/无u/某e/那o …) store their suffix
+# vowel in lowercase, so an uppercased vowel in the input (sentence-start / auto-capitalize)
+# would otherwise fail to match. Verified that no dictionary key contains uppercase ASCII,
+# so this never breaks a match; kanji and superscript identifiers (ᴬᴰ…) are left untouched.
+_ASCII_LOWER = str.maketrans(string.ascii_uppercase, string.ascii_lowercase)
 
 
 @dataclass(frozen=True)
@@ -161,6 +168,9 @@ def build_mapping_index_cached(records: tuple[tuple[str, str, str], ...]) -> Map
 
 
 def convert_kanji_esperanto_to_alphabet(text: str, mapping: MappingIndex) -> str:
+    # Make the ASCII portion case-insensitive so uppercased correlative suffix vowels still
+    # match (e.g. 全O -> ĉio, not the base 全 -> integro). The output is fully lowercased anyway.
+    text = text.translate(_ASCII_LOWER)
     result: List[str] = []
     i = 0
     while i < len(text):
