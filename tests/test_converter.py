@@ -97,6 +97,15 @@ def test_read_csv_5col_with_header(tmp_path):
     assert list(df["kanji"]) == ["良"]
 
 
+def test_combining_breve_element_round_trips():
+    # 金ᴱᵁ̆ (europium) encodes its identifier as MODIFIER LETTER CAPITAL U (U+1D41) + a separate
+    # COMBINING BREVE (U+0306). The full multi-codepoint key must match — a regression guard so the
+    # combining mark stays intact and a shorter key like 金ᴱ (erbium) does not shadow it.
+    mapping = _mapping([("eŭropi", "金ᴱᵁ̆", 0), ("erbi", "金ᴱ", 1), ("or", "金", 2)])
+    assert convert_kanji_esperanto_to_alphabet("金ᴱᵁ̆", mapping) == "eŭropi"
+    assert convert_kanji_esperanto_to_alphabet("金ᴱ", mapping) == "erbi"
+
+
 def test_dataframe_to_mapping_records_is_behaviour_preserving():
     # The vectorized records builder must produce the same (esperanto, kanji, priority) string
     # tuples a per-row construction would, including int priority coerced to str.
