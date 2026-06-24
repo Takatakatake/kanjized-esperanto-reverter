@@ -113,7 +113,9 @@ def load_dictionary_source(source_id: str) -> pd.DataFrame:
 
 def _priority(value, fallback: int) -> int:
     try:
-        return int(str(value).strip())
+        # Parse via float() so a custom CSV that writes priorities as '1.0' is honoured
+        # rather than silently dropped to source order.
+        return int(float(str(value).strip()))
     except (TypeError, ValueError):
         return fallback
 
@@ -229,7 +231,13 @@ def dictionary_label(source_id: str) -> str:
 
 def selected_source_signature(source_id: str, uploaded_file) -> str:
     if source_id != "custom":
-        return source_id
+        # Fold the file mtime into the signature so an on-disk dictionary change invalidates a
+        # previously-converted result (otherwise it would still show as "current").
+        path = DICTIONARY_SOURCES.get(source_id, {}).get("path")
+        try:
+            return f"{source_id}:{path.stat().st_mtime_ns}" if path is not None else source_id
+        except OSError:
+            return source_id
     if uploaded_file is None:
         return "custom:none"
     size = getattr(uploaded_file, "size", "")

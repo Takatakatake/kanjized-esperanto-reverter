@@ -97,6 +97,13 @@ def test_read_csv_5col_with_header(tmp_path):
     assert list(df["kanji"]) == ["良"]
 
 
+def test_priority_accepts_float_strings():
+    # A custom CSV may write priority as '1.0'/'2.0'. With float parsing, the lower priority (b)
+    # wins; without it both fall back to source order and 'a' would win — so this isolates the fix.
+    mapping = _mapping([("a", "同", "2.0"), ("b", "同", "1.0")])
+    assert convert_kanji_esperanto_to_alphabet("同", mapping) == "b"
+
+
 def test_combining_breve_element_round_trips():
     # 金ᴱᵁ̆ (europium) encodes its identifier as MODIFIER LETTER CAPITAL U (U+1D41) + a separate
     # COMBINING BREVE (U+0306). The full multi-codepoint key must match — a regression guard so the
