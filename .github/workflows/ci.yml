@@ -13,12 +13,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: kanjized-esperanto-reverter
-      # The sync check reads ../kanji-esperanto-monaco/all.json, so both repos must sit
-      # side by side. Check the upstream Monaco repo out as a sibling directory.
-      - name: Checkout Monaco (upstream dictionary source)
+      # Pin the upstream Monaco checkout to the exact commit the bundled CSV was generated from
+      # (recorded in monaco-commit.txt, updated whenever the CSV is regenerated). This keeps CI
+      # hermetic — an unrelated reverter PR won't go red just because Monaco main moved ahead — and
+      # makes the byte-for-byte sync check (incl. source_line) compare against the matching all.json.
+      - name: Resolve pinned Monaco commit
+        id: monaco
+        run: echo "ref=$(tr -d '[:space:]' < kanjized-esperanto-reverter/monaco-commit.txt)" >> "$GITHUB_OUTPUT"
+      - name: Checkout Monaco (pinned dictionary source)
         uses: actions/checkout@v4
         with:
           repository: Takatakatake/kanji-esperanto-monaco
+          ref: ${{ steps.monaco.outputs.ref }}
           path: kanji-esperanto-monaco
       - uses: actions/setup-python@v5
         with:

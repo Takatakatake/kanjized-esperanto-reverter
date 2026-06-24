@@ -1,5 +1,5 @@
-# Reverter runtime dependencies.
-# Tested with Python 3.8.18 / streamlit 1.40.1 / pandas 2.0.3.
-# Bounded to the current majors for reproducible deploys while allowing patch updates.
+# Reverter runtime dependencies, bounded to the current majors for reproducible deploys.
+# CI installs the latest in-range versions on Python 3.11; the app also runs on Python 3.8+
+# (local development used streamlit 1.40.1 / pandas 2.0.3 on Python 3.8.18).
 streamlit>=1.40,<2
 pandas>=2.0,<3
