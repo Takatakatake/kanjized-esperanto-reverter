@@ -96,13 +96,19 @@ python3 tools/build_reverter_dictionary_from_all_json.py ../kanji-esperanto-mona
 
 生成時に、`c^i` や `u^` などの `^` 表記は `ĉi`、`ŭ` などの小文字エスペラント表記へ戻します。
 
+スニペット用2列CSV（現行割当）は、再生成した主辞書CSVから作り直せます：
+
+```bash
+python3 tools/build_snippet_csv_from_reverter_csv.py
+```
+
 生成後は、Monaco側の `all.json` とReverter用CSVが一致しているか確認できます：
 
 ```bash
 python3 tools/check_dictionary_sync.py
 ```
 
-このチェックでは、CSVの完全一致・現在の例文の戻し変換・エスペラント語根に x-system / `^` 表記の変換漏れがないこと（例: `igx` が `iĝ` に変換済み）を確認します。`.github/workflows/ci.yml` で push / PR 時に自動実行され、Monaco 側 `all.json` との不一致を検知します。
+このチェックでは、CSVの完全一致・現在の例文の戻し変換・エスペラント語根に x-system / `^` 表記の変換漏れがないこと（例: `igx` が `iĝ` に変換済み）を確認します。あわせて、スニペット用2列CSVが主辞書CSVの2列射影（同じ行・同じ順序）であり、同一の変換結果（同一のマッピング）になることも検証します。`.github/workflows/ci.yml` で push / PR 時に自動実行され、Monaco 側 `all.json` との不一致を検知します。
 
 > **生成CSVの列について**: 上記コマンドで生成される `data/pejvo_piv_20260620_reverter.csv` は 5 列（`esperanto,kanji,priority,source_root,source_line`）です。アプリが変換に使うのは先頭 3 列（`esperanto,kanji,priority`）で、`source_root`/`source_line` は同期チェック用のメタ情報です。カスタム CSV をアップロードする場合は上記「CSVファイル形式」の 3 列だけで構いません。
 
