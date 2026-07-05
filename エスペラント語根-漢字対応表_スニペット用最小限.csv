@@ -50,6 +50,7 @@ homoteti,位似ᴴᴵ
 vaĉ,值ⱽᶜ̂
 okt,八度ᴼᴷ
 ankiloz,关节强直
+ĥemi,化学ᴴ̂
 duoden,十二指肠
 sonet,十四行诗
 sinergi,协同作用
@@ -104,6 +105,7 @@ ramonĉ,木ᴿᶜ̂
 tibuŝen,木ᵀˢ̂
 meĥanism,机ᴹᴴ̂
 meĥanik,械ᴹᴴ̂
+vipur,毒蛇ⱽᵁ
 ĥaos,混乱ᴴ̂
 greb,潜鸟ᴳᴿ
 musket,火枪ᴹᵀ
@@ -247,6 +249,7 @@ eŭropi,金ᴱᵁ̆
 laŭrenci,金ᴸᵁ̆
 taĉment,队ᵀᶜ̂
 alabastr,雪花石膏
+budĝet,预算ᴮᴰ
 faeton,马车ᶠᵀ
 anĉov,鱼ᴬᶜ̂
 leŭcisk,鱼ᴸᵁ̆
@@ -289,6 +292,7 @@ dielektrik,介电ᴰ
 kakt,仙人掌
 agent,代ᴬᴳ
 prokur,代ᴾᴷ
+mimik,仿ᴹᴷ
 sfenisk,企鹅ˢ
 konferenc,会ᴷᶠ
 postiĉ,伪ᴾᵀ
@@ -406,7 +410,6 @@ motor,动ᴹᵀ
 korsar,劫ᴷᴿ
 ŝkop,勺ˢ̂
 bandaĝ,包ᴮᴺ
-ĥemi,化ᴴ̂
 deka,十ᴰᴬ
 decimal,十ᴰᶜ
 novembr,十一月
@@ -448,6 +451,7 @@ kongru,合ᴷᴳ
 konjunkci,合ᴷᴶ
 kluĉ,合ᴷᴸ
 konform,合ᴷᴺ
+korus,合唱ᴷ
 izotop,同位素
 nominal,名ᴺᴺ
 heliant,向日葵
@@ -466,7 +470,6 @@ kluk,咕ᴷᴸ
 filozof,哲ᶠᴵ
 labi,唇ᴸᴮ
 labial,唇ᴸᴸ
-ĥor,唱ᴴ̂
 ronĝ,啃ᴿᴺ
 kvocient,商ᴷⱽ
 knal,啪ᴷᴺ
@@ -2639,7 +2642,7 @@ klorofil,叶绿
 signal,号ˢ
 fanfar,号角
 sintez,合ˢ
-korus,合唱
+ĥor,合唱
 zigot,合子
 anabol,合成
 aloj,合金
@@ -3305,7 +3308,6 @@ nekromanci,招魂
 kult,拜ᴷ
 pilgrim,拜ᴾ
 riverenc,拜ᴿ
-simul,拟ˢ
 vring,拧ⱽ
 impoŝt,拱座
 arkad,拱廊
@@ -3756,7 +3758,7 @@ miasm,毒气
 ŝankr,毒疮
 cikut,毒芹
 mancinel,毒苹
-vipur,毒蛇
+viper,毒蛇
 lol,毒麦
 proporci,比ᴾ
 lan,毛ᴸ
@@ -4363,7 +4365,6 @@ tab,签ᵀ
 konciz,简ᴷ
 lakon,简ᴸ
 aritmetik,算ᴬ
-budĝet,算ᴮ
 operator,算子
 abak,算盘
 administr,管ᴬ
@@ -4825,7 +4826,6 @@ kolubr,蛇ᴷ
 meandr,蛇ᴹ
 naj,蛇ᴺ
 cerast,蛇ᶜ
-viper,蛇ⱽ
 ofiur,蛇尾
 lupol,蛇麻
 flan,蛋奶
@@ -6325,7 +6325,7 @@ pionir,拓
 tren,拖
 fuŝ,拙
 ador,拜
-mimik,拟
+simul,拟
 svarm,拥
 dig,拦
 tord,拧
