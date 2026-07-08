@@ -297,6 +297,12 @@ def main() -> None:
     )
 
     st.title("漢字化エスペラント → アルファベット変換")
+    st.caption(
+        "📖 プロジェクトガイド: "
+        "[日本語](https://takatakatake.github.io/kanji_assign/index.html) / "
+        "[한국어](https://takatakatake.github.io/kanji_assign/index.ko.html) / "
+        "[中文](https://takatakatake.github.io/kanji_assign/index.zh.html)"
+    )
     st.markdown("---")
 
     source_id, uploaded_file = render_sidebar()
