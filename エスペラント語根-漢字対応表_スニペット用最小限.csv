@@ -297,6 +297,7 @@ sfenisk,企鹅ˢ
 konferenc,会ᴷᶠ
 postiĉ,伪ᴾᵀ
 kompani,伴ᴷᴹ
+kompan,伴ᴷᴼ
 kamarad,伴ᴷᴿ
 ekstens,伸ᴱᴷ
 som,体ˢᴹ
@@ -311,6 +312,7 @@ fint,假ᶠᴺ
 karis,假虎刺
 deviaci,偏ᴰᶜ
 paranoj,偏执ᴾ
+suspend,停ˢˢ
 salubr,健ˢᴸ
 pup,偶ᴾᴾ
 arogant,傲ᴬᴺ
@@ -382,6 +384,7 @@ sprint,冲ˢᴺ
 frigid,冷ᶠᴳ
 kongel,冻ᴷᴺ
 dekrement,减ᴰᴷ
+diminu,减ᴰᴹ
 koagul,凝ᴷᴳ
 kondens,凝ᴷᴺ
 eksport,出ᴱᴷ
@@ -399,12 +402,14 @@ livre,制服ᴸ
 skovel,刷ˢᴷ
 strid,刺ˢᵀ
 punktur,刺ᴾᴺ
+avers,前ᴬᴿ
 avan,前ᴬⱽ
 prostat,前列腺
 anatomi,剖ᴬᴵ
 ĉizoj,剪ᶜ̂
 akcesor,副ᴬᴷ
 sekant,割ˢᴷ
+aŭtomaci,动ᴬᶜ
 kinez,动ᴷᶻ
 motor,动ᴹᵀ
 korsar,劫ᴷᴿ
@@ -439,6 +444,7 @@ generator,发电ᴳ
 ameb,变形虫
 kameleon,变色龙
 renegat,叛ᴿᴺ
+arkaik,古ᴬᴵ
 arkeo,古ᴬᴼ
 arka,古ᴬᴿ
 paleont,古ᴾᴺ
@@ -456,6 +462,7 @@ izotop,同位素
 nominal,名ᴺᴺ
 heliant,向日葵
 neg,否ᴺᴱ
+negaci,否ᴺᶜ
 tonel,吨ᵀᴸ
 inklud,含ᴵᴰ
 implic,含ᴵᴹ
@@ -492,7 +499,7 @@ teren,地ᵀᴺ
 topo,地ᵀᴾ
 fortik,坚ᶠᵀ
 konfirmaci,坚信礼
-perpendikular,垂ᴾᴿ
+perpendikl,垂ᴾᴸ
 ptoz,垂ᴾᵀ
 plastik,塑ᴾᴷ
 plasti,塑ᴾᴸ
@@ -599,6 +606,7 @@ diferencial,异ᴰᴸ
 abandon,弃ᴬᴰ
 mod,式ᴹᴰ
 modal,式ᴹᴸ
+atribut,归ᴬᵀ
 morfi,形ᴹᴵ
 figur,形ᶠᴳ
 formal,形ᶠᴸ
@@ -611,6 +619,7 @@ kolerik,怒ᴷᴷ
 impotent,性无能
 ĝeneral,总ᴳ̂
 malign,恶ᴹᴳ
+mav,恶ᴹⱽ
 ĉagren,恼ᶜ̂
 platan,悬铃木
 trist,悲ᵀˢ
@@ -651,6 +660,7 @@ ekskreci,排ᴱᴿ
 kotlet,排ᴷᵀ
 ŝov,推ˢ̂
 propuls,推ᴾᴿ
+piktur,描ᴾᴷ
 interpol,插ᴵᵀ
 ŝancel,摇ˢ̂
 karambol,撞ᴷᴿ
@@ -665,6 +675,7 @@ dispers,散ᴰᴾ
 distr,散ᴰᵀ
 difuz,散ᴰᶠ
 diverĝ,散ᴰⱽ
+pietat,敬ᴾᴵ
 piet,敬ᴾᵀ
 numeral,数ᴺᴿ
 apret,整ᴬᴾ
@@ -907,6 +918,7 @@ kromosom,染色体
 kromatin,染色质
 limonad,柠檬水
 kegl,柱ᴷᴳ
+balustrad,栏ᴮᴸ
 sampl,样ˢᴹ
 ribosom,核糖体
 radikl,根ᴿᴸ
@@ -1051,7 +1063,9 @@ oftalm,目ᴼᶠ
 helikopter,直升机
 fizionomi,相ᶠᴺ
 provincial,省ᴾᴸ
+aŭtentik,真ᴬᴷ
 kobr,眼镜蛇
+vojevod,督ⱽᴶ
 celakant,矛尾鱼
 amfibrak,短长短
 antimon,矿ᴬᴺ
@@ -1077,6 +1091,7 @@ social,社ˢᴸ
 societ,社ˢᵀ
 balot,票ᴮᴬ
 ĉek,票ᶜ̂
+prohibici,禁ᴾᶜ
 ion,离子ᴵ
 partikular,私ᴾᵀ
 kolĉik,秋水仙
@@ -1541,6 +1556,7 @@ amarant,菜ᴬᴹ
 lap,菜ᴸᴾ
 jakv,菠萝蜜
 karoten,萝卜素
+batalion,营ᴮᵀ
 kantonment,营ᴷᴺ
 kvartir,营ᴷⱽ
 signifikanc,著ˢᴺ
@@ -1689,6 +1705,7 @@ poezi,诗ᴾᶻ
 modul,调ᴹᴰ
 tonal,调ᵀᴸ
 paletr,调色板
+konvers,谈ᴷᴼ
 koluzi,谋ᴷᴸ
 komplot,谋ᴷᴹ
 harmon,谐ᴴᴬ
@@ -1735,6 +1752,7 @@ konekt,连ᴷᴺ
 dekadenc,退ᴰᴷ
 retret,退ᴿᵀ
 emeritur,退休金
+adekvat,适ᴬᴰ
 akomod,适ᴬᴷ
 ŝerc,逗ˢ̂
 perversi,邪ᴾᴵ
@@ -2106,6 +2124,7 @@ uncial,书体
 kaligraf,书法
 pelmel,乱ᴾ
 turbul,乱ᵀ
+incest,乱伦
 emulsi,乳ᴱ
 mam,乳ᴹ
 cic,乳ᶜ
@@ -2277,8 +2296,9 @@ bias,偏ᴮ
 jor,偏ᴶ
 ekscentrik,偏心
 bigot,偏执
-suspend,停ˢ
+stop,停ˢ
 kape,停ᴷ
+armistic,停战
 akcidenc,偶ᴬ
 eventual,偶ᴱ
 hazard,偶ᴴ
@@ -2451,6 +2471,7 @@ traŭmat,创ᵀ
 novic,初ᴺ
 rudiment,初ᴿ
 kalend,初一
+kolostr,初乳
 kondamn,判ᴷ
 verdikt,判ⱽ
 interez,利ᴵ
@@ -2517,6 +2538,7 @@ prepuci,包皮
 hidatid,包虫
 kemi,化学
 fosili,化石
+avatar,化身
 distrikt,区ᴰ
 kvartal,区ᴷ
 hospital,医ᴴ
@@ -2545,6 +2567,7 @@ ocel,单眼
 antarkt,南ᴬ
 erudici,博ᴱ
 aŭgur,占ᴬ
+slip,卡ˢ
 astaten,卤ᴬ
 brom,卤ᴮ
 sanitar,卫ˢ
@@ -2580,6 +2603,7 @@ manometr,压计
 abomen,厌ᴬ
 mizantrop,厌人
 mizogin,厌女
+klozet,厕ᴷ
 krasul,厚叶
 original,原ᴼ
 protozo,原兽
@@ -2617,6 +2641,7 @@ konjugaci,变位
 anamorfoz,变形
 zom,变焦
 apostat,叛ᴬ
+insurekci,叛ᴵ
 perfid,叛ᴾ
 stomat,口ˢ
 luk,口ᴸ
@@ -2629,6 +2654,7 @@ paleozoik,古生
 propozici,句ᴾ
 vers,句ⱽ
 sintaks,句法
+stand,台ˢ
 bufed,台ᴮ
 konzol,台ᴷ
 teras,台ᵀ
@@ -2678,6 +2704,7 @@ revelaci,启ᴿ
 absorb,吸ᴬ
 inhal,吸ᴵ
 anastomoz,吻合
+ror,吼ᴿ
 aviz,告ᴬ
 herold,告ᴴ
 an,员ᴬ
@@ -2805,6 +2832,7 @@ avel,坚果
 altar,坛ᴬ
 eskarp,坡ᴱ
 talus,坡ᵀ
+apik,垂ᴬ
 hipofiz,垂体
 agoni,垂死
 spam,垃圾
@@ -2892,6 +2920,7 @@ bombast,夸ᴮ
 sandviĉ,夹ˢ
 ĉuk,夹头
 splint,夹板
+bizar,奇ᴮ
 kurioz,奇ᴷ
 mirakl,奇ᴹ
 stereotip,套ˢ
@@ -3173,12 +3202,14 @@ disciplin,律ᴰ
 kadenc,律ᴷ
 ritm,律ᴿ
 adept,徒ᴬ
+disĉipl,徒ᴰ
 infinitezim,微ᴵ
 liliput,微ᴸ
 nuanc,微ᴺ
 briz,微风
 moral,德ᴹ
 blazon,徽ᴮ
+emblem,徽ᴱ
 heraldik,徽ᴴ
 mens,心ᴹ
 psikologi,心ᴾ
@@ -3244,6 +3275,7 @@ imagin,成虫
 konfekci,成衣
 atm,我ᴬ
 ni,我们
+disjunkci,或ᴰ
 batal,战ᴮ
 polem,战ᴾ
 tank,战车
@@ -3339,6 +3371,7 @@ splis,接ˢ
 junt,接ᴶ
 tanĝ,接ᵀ
 stafet,接力
+aŭdienc,接见
 sambuk,接骨
 inferenc,推ᴵ
 rezon,推ᴿ
@@ -3480,6 +3513,7 @@ labil,易变
 astr,星ᴬ
 planed,星ᴾ
 nebuloz,星云
+asterisk,星号
 konstelaci,星座
 galaksi,星系
 enantio,映ᴱ
@@ -3487,6 +3521,7 @@ vernaliz,春化
 evident,显ᴱ
 manifest,显ᴹ
 areol,晕ᴬ
+nimb,晕ᴺ
 vertiĝ,晕ⱽ
 stomp,晕染
 universal,普ᵁ
@@ -3601,6 +3636,7 @@ nuks,果ᴺ
 pampelmus,果ᴾ
 rezult,果ᴿ
 citron,果ᶜ
+hort,果园
 marmelad,果酱
 rabd,枝ᴿ
 verg,枝ⱽ
@@ -3698,6 +3734,7 @@ arek,棕ᴬ
 laŭb,棚ᴸ
 markez,棚ᴹ
 hangar,棚库
+bastion,棱堡
 prism,棱镜
 botanik,植ᴮ
 fit,植ᶠ
@@ -3711,6 +3748,7 @@ koncept,概ᴷ
 noci,概ᴺ
 resum,概ᴿ
 punik,榴ᴾ
+limin,槛ᴸ
 alveol,槽ᴬ
 kanel,槽ᴷ
 rabet,槽ᴿ
@@ -3796,6 +3834,7 @@ akvarel,水彩
 meduz,水母
 cement,水泥
 irigaci,水渠
+bubal,水牛
 guaŝ,水粉
 staki,水苏
 most,汁ᴹ
@@ -4054,6 +4093,7 @@ diktator,独裁
 sfinks,狮面
 grif,狮鹰
 gehen,狱ᴳ
+narak,狱ᴺ
 prizon,狱ᴾ
 pred,猎ᴾ
 spekulativ,猜ˢ
@@ -4089,6 +4129,7 @@ bracelet,环ᴮ
 tor,环ᵀ
 cikl,环ᶜ
 epoksi,环氧
+atol,环礁
 aper,现ᴬ
 kontant,现ᴷ
 modern,现ᴹ
@@ -4132,6 +4173,7 @@ laktuk,生菜
 aplik,用ᴬ
 hub,田ᴴ
 idili,田园
+atletik,田径
 skarab,甲ˢ
 blend,甲ᴮ
 metil,甲ᴹ
@@ -4225,14 +4267,14 @@ apostrof,省ᴬ
 elizi,省ᴱ
 guberni,省ᴳ
 provinc,省ᴾ
-aŭtentik,真ᴬ
+aŭtent,真ᴬ
 eŭkariot,真核
 tarz,眼板
 piĵam,睡ᴾ
 nimfe,睡莲
 glir,睡鼠
 banus,督ᴮ
-vojevod,督ⱽ
+vokt,督ⱽ
 halebard,矛ᴴ
 vektor,矢量
 gnostik,知ᴳ
@@ -4289,6 +4331,7 @@ fosforesk,磷光
 eŭfaŭzi,磷虾
 sugest,示ˢ
 etiket,礼ᴱ
+aŭl,礼堂
 liturgi,礼拜
 klub,社ᴷ
 kapel,祈堂
@@ -4304,7 +4347,7 @@ mit,神话
 hieratik,祭ᴴ
 sacerdot,祭司
 embarg,禁ᴱ
-prohibici,禁ᴾ
+prohib,禁ᴾ
 elize,福ᴱ
 evangeli,福音
 repudi,离ᴿ
@@ -4418,6 +4461,7 @@ rig,索ᴿ
 funikl,索ᶠ
 ametist,紫晶
 viol,紫花
+kumul,累ᴷ
 skarlat,红ˢ
 eritr,红ᴱ
 tantiem,红利
@@ -4475,6 +4519,8 @@ apercept,统觉
 kontinu,续ᴷ
 dipsak,续断
 smerald,绿玉
+afiks,缀ᴬ
+infiks,缀ᴵ
 prefiks,缀ᴾ
 tiravir,缆ᵀ
 telfer,缆路
@@ -4517,6 +4563,7 @@ manikur,美甲
 antilop,羚ᴬ
 gazel,羚ᴳ
 greg,群ᴳ
+hord,群ᴴ
 arkipelag,群岛
 volan,羽ⱽ
 paŭt,翘嘴
@@ -4625,6 +4672,8 @@ ekspansi,膨ᴱ
 grop,臀ᴳ
 vasal,臣ⱽ
 spontan,自发
+aŭtodidakt,自学
+suicid,自杀
 aŭtonom,自治
 artez,自流
 nekton,自游
@@ -4898,6 +4947,7 @@ kostum,装ᴷ
 munt,装ᴹ
 kalson,裤ᴷ
 gimnosperm,裸子
+uest,西ᵁ
 sagu,西米
 mulĉ,覆ᴹ
 spekt,观ˢ
@@ -4937,6 +4987,7 @@ rekord,记ᴿ
 reporter,记者
 lekci,讲ᴸ
 marĉand,讲价
+aŭditori,讲堂
 docent,讲师
 licenc,许ᴸ
 silog,论ˢ
@@ -5116,6 +5167,7 @@ invers,逆ᴵ
 singult,逆气
 selekt,选ˢ
 antologi,选ᴬ
+opci,选ᴼ
 atlet,选手
 dializ,透析
 aĵur,透空
@@ -5297,6 +5349,7 @@ ostrak,陶片
 epiornit,隆鸟
 ataŝe,随员
 stokast,随机
+anakoret,隐ᴬ
 marabut,隐ᴹ
 sept,隔ˢ
 adiabat,隔ᴬ
@@ -5315,12 +5368,14 @@ skulpt,雕ˢ
 relief,雕ᴿ
 cizel,雕ᶜ
 lavang,雪崩
+blizard,雪暴
 cedr,雪松
 sled,雪车
 soldanel,雪铃
 grajl,雹ᴳ
 sism,震ˢ
 komoci,震荡
+mucid,霉ᴹ
 ĥoler,霍乱
 prujn,霜ᴾ
 ekshibici,露ᴱ
@@ -5845,7 +5900,7 @@ hal,厅
 kalendar,历
 prem,压
 enu,厌
-klozet,厕
+latrin,厕
 centi,厘
 dik,厚
 pra,原
@@ -5983,7 +6038,7 @@ firm,坚
 forum,坛
 kraŝ,坠
 dekliv,坡
-perpendikl,垂
+perpendikular,垂
 monopol,垄
 tip,型
 rempar,垒
@@ -6414,6 +6469,7 @@ sen,无
 tag,日
 eks,旧
 fru,早
+arid,旱
 temp,时
 morgaŭ,明
 sven,昏
@@ -7090,6 +7146,7 @@ glu,胶
 brust,胸
 pov,能
 gras,脂
+fragil,脆
 vejn,脉
 spin,脊
 viscer,脏
@@ -7189,6 +7246,7 @@ disdegn,蔑
 sarment,蔓
 sakar,蔗
 banan,蕉
+minc,薄
 salajr,薪
 maniok,薯
 kaŝ,藏
