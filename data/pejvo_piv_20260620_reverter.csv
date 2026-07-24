@@ -71,6 +71,7 @@ antropomorfism,人形主义,0,antropomorfism,8422
 pingvin,企鹅ᴾᴵ,0,pingvin,7644
 kaŭkalid,伞ᴷᵁ̆,0,kau^kalid,4451
 homoteti,位似ᴴᴵ,0,homoteti,7495
+tujon,侧柏ᵀᴼ,0,tujon,9774
 vaĉ,值ⱽᶜ̂,0,vac^,231
 hipnoz,催眠ᴴᶻ,0,hipnoz,6110
 precedent,先例ᴾᵀ,0,precedent,8040
@@ -158,7 +159,6 @@ datum,数据ᴰᴹ,0,datum,5832
 proletari,无产ᴾᴿ,0,proletari,5613
 anarki,无政ᴬᴵ,0,anarki,6403
 anarkism,无政主义,0,anarkism,8387
-aklimatiz,无气候化,0,aklimatiz,8350
 ateism,无神主义,0,ateism,8467
 heliotropism,日向主义,0,heliotropism,8891
 astrologi,星学ᴬᴸ,0,astrologi,8463
@@ -1426,6 +1426,7 @@ helium,气ᴴᴹ,0,helium,1383
 ksenon,气ᴷˢ,0,ksenon,1386
 niton,气ᴺᵀ,0,niton,1385
 pneŭmatik,气ᴾᴷ,0,pneu^matik,1377
+aklimatiz,气候化,0,aklimatiz,8350
 klimatologi,气候学,0,klimatologi,9896
 klimatoterapi,气候疗,0,klimatoterapi,9073
 meteologi,气学ᴹ,0,meteologi,8330
@@ -3224,6 +3225,7 @@ liver,供ᴸ,0,liver,3848
 proviz,供ᴾ,0,proviz,3849
 rekognosk,侦ᴿ,0,rekognosk,6139
 tempi,侧头,0,tempi,6931
+tujan,侧柏,0,tujan,9773
 insult,侮ᴵ,0,insult,4143
 markiz,侯ᴹ,0,markiz,5028
 konstip,便秘,0,konstip,6460
@@ -3700,8 +3702,6 @@ impresion,印象,0,impresion,7875
 kriz,危ᴷ,0,kriz,2056
 ekstemporal,即ᴱ,0,ekstemporal,710
 improviz,即兴,0,improviz,6251
-tujon,即分,0,tujon,9774
-tujan,即员,0,tujan,9773
 kojon,卵ᴷ,0,kojon,2585
 ovari,卵巢,0,ovari,6259
 ovogoni,卵源,0,ovogoni,9396
