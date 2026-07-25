@@ -161,6 +161,7 @@ anarkism,无政主义
 ateism,无神主义
 heliotropism,日向主义
 astrologi,星学ᴬᴸ
+santal,木ˢᴬᴺ
 sekvoj,木ˢᴱᴷ
 aŝok,木ᴬˢ̂
 astrakant,木ᴬˢᵀ
@@ -179,6 +180,7 @@ karagan,木ᴷᴬᴿ
 katalp,木ᴷᴬᵀ
 kazuaren,木ᴷᴬᶻ
 kenomel,木ᴷᴱᴺ
+kinkon,木ᴷᴵᴺ
 klementin,木ᴷᴸᴱ
 kokolob,木ᴷᴼᴷ
 kombret,木ᴷᴼᴹ
@@ -571,7 +573,9 @@ armadel,兽ᴬᴿ
 blastocer,兽ᴮˢ
 besti,兽ᴮᴵ
 boselaf,兽ᴮᴸ
+bradip,兽ᴮᴿ
 desmod,兽ᴰˢ
+dazip,兽ᴰᴬ
 dendrolag,兽ᴰᴰ
 dugong,兽ᴰᴳ
 dazipod,兽ᴰᶻ
@@ -1576,6 +1580,7 @@ glomerul,球ᴳᴹ
 globulin,球蛋白
 racional,理ᴿᴺ
 harmonik,琴ᴴᴹ
+elateri,瓜ᴱᴸ
 kukumis,瓜ᴷˢ
 kantalup,瓜ᴷᴺ
 kukurb,瓜ᴷᴿ
@@ -1900,6 +1905,7 @@ feston,花环ᶠ
 ŝos,芽ˢ̂
 pomolog,苹学家
 stramoni,茄ˢᵀ
+hiosciam,茄ᴴᶜ
 korm,茎叶体
 kokon,茧ᴷᴷ
 sesleri,草ˢˢ
@@ -1957,6 +1963,7 @@ bazili,草ᴮᶻ
 daktilis,草ᴰˢ
 difenbaki,草ᴰᴮ
 digitari,草ᴰᴳ
+digital,草ᴰᴵ
 donak,草ᴰᴷ
 drimi,草ᴰᴹ
 dione,草ᴰᴺ
@@ -2253,6 +2260,7 @@ bakteriologi,菌学ᴮ
 fungologi,菌学ᶠ
 mikolog,菌学家
 baktericid,菌杀ᴮ
+asparag,菜ᴬˢ
 amarant,菜ᴬᴹ
 brokol,菜ᴮᴷ
 lap,菜ᴸᴾ
@@ -2319,6 +2327,7 @@ ksestobi,虫ᴷˢ
 karab,虫ᴷᴮ
 koriks,虫ᴷᴷ
 kalosom,虫ᴷᴸ
+kantarid,虫ᴷᴺ
 kopris,虫ᴷᴾ
 krizomel,虫ᴷᴿ
 katokal,虫ᴷᵀ
@@ -3141,8 +3150,8 @@ komandit,令受
 kurz,价ᴷ
 tarif,价ᵀ
 valent,价ⱽ
-ajn,任ᴬ
 investitur,任ᴵ
+kapric,任ᴷ
 porci,份ᴾ
 mim,仿ᴹ
 pastiĉ,仿ᴾ
@@ -3811,6 +3820,7 @@ teras,台ᵀ
 bilard,台球
 vajc,台钳
 anal,史ᴬ
+prehistori,史ᴾ
 historiografi,史志
 historiograf,史记
 epope,史诗
@@ -3875,8 +3885,8 @@ anastomoz,吻合
 ror,吼ᴿ
 aviz,告ᴬ
 herold,告ᴴ
-an,员ᴬ
 komiz,员ᴷ
+membr,员ᴹ
 periferi,周边
 sapor,味ˢ
 fatal,命ᶠ
@@ -6674,6 +6684,7 @@ ozon,臭氧
 cim,臭虫
 solstic,至ˢ
 almenaŭ,至ᴬ
+premolar,臼ᴾ
 glosit,舌炎
 glosektomi,舌除
 diastol,舒ᴰ
@@ -6748,7 +6759,7 @@ asket,苦行
 pomologi,苹学
 solan,茄ˢ
 alkekeng,茄ᴬ
-hiosciam,茄ᴴ
+hiskiam,茄ᴴ
 likopersik,茄ᴸ
 melongen,茄ᴹ
 petuni,茄ᴾ
@@ -7994,7 +8005,7 @@ rit,仪
 supin,仰
 kondiĉ,件
 prez,价
-kapric,任
+ajn,任
 da,份
 imit,仿
 embusk,伏
@@ -8257,7 +8268,7 @@ gap,呆
 prezent,呈
 inform,告
 naŭz,呕
-membr,员
+an,员
 drap,呢
 semajn,周
 gust,味
