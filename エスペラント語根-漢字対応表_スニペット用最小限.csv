@@ -73,7 +73,7 @@ aŭtokrati,专制ᴬᴵ
 mesoenter,中肠ᴹᴼ
 mezenter,中肠ᴹᶻ
 pontifik,主祭ᴾᴺ
-optimism,乐主义ᴼ
+hedonism,乐主义ᴴ
 bimetalism,二金主义
 meten,亚甲ᴹᴺ
 antropomorfism,人形主义
@@ -229,7 +229,7 @@ fles,比目鱼ᶠ
 klimatolog,气候学家
 atmosferologi,气学ᴬᵀ
 meteorologi,气学ᴹᴿ
-meteolog,气学家ᴹ
+aerolog,气学家ᴬ
 atmometr,气计ᴬᵀ
 gasometr,气计ᴳᴼ
 nitrit,氮盐ᴺᴵ
@@ -472,7 +472,7 @@ osteopati,骨病ᴼᴱ
 medolit,髓炎ᴹᴰ
 mjelopati,髓病ᴹᴶ
 medolopati,髓病ᴹᴼ
-altometr,高计ᴬᴼ
+altimetr,高计ᴬᴵ
 sardin,鱼ˢᴬᴿ
 seriol,鱼ˢᴱᴿ
 anĉov,鱼ᴬᶜ̂
@@ -535,8 +535,8 @@ subjektiv,主ˢⱽ
 precip,主ᴾᶜ
 aortit,主脉炎
 optim,乐ᴼᴾ
-hedonism,乐主义
-optimist,乐家ᴼ
+optimism,乐主义
+hedonist,乐家ᴴ
 perpleks,乱ᴾᴿ
 papilom,乳头瘤
 mastoidit,乳突炎
@@ -1534,7 +1534,7 @@ karbunkl,毒疮ᴷ
 furunk,毒疮ᶠ
 pleŭronekt,比目鱼
 trikofit,毛癣菌
-mili,毫ᴹᴵ
+milimetr,毫ᴹᴹ
 demokrat,民ᴰᴱ
 pleb,民ᴾᴸ
 civilizaci,民化态
@@ -1547,8 +1547,8 @@ pneŭmatik,气ᴾᴷ
 aklimatiz,气候化
 klimatologi,气候学
 klimatoterapi,气候疗
-meteologi,气学ᴹ
-aerolog,气学家
+aerologi,气学ᴬ
+meteolog,气学家
 gasogen,气生ᴳ
 traĥeotomi,气管切
 trakeofit,气管植
@@ -1971,7 +1971,7 @@ federal,联ᶠᴸ
 kim,聚伞ᴷ
 bugr,肛交ᴮ
 ile,肠ᴵᴸ
-enterit,肠炎ᴱ
+ileit,肠炎ᴵ
 pneŭmoni,肺ᴾᴵ
 pneŭmon,肺ᴾᴺ
 pneŭmonokonioz,肺尘症
@@ -2031,6 +2031,7 @@ pentatom,臭虫ᴾ
 sesdeknaŭ,舔吸ˢ
 kajak,舟ᴷᴶ
 kanot,舟ᴷᵀ
+naŭt,航ᴺᴬ
 navigaci,航ᴺᶜ
 fregat,舰ᶠᴿ
 benign,良ᴮᴳ
@@ -2791,7 +2792,7 @@ adekvat,适ᴬᴰ
 akomod,适ᴬᴷ
 proskripci,逐ᴾᴾ
 ŝerc,逗ˢ̂
-rapidometr,速计ᴿ
+takimetr,速计ᵀ
 taoism,道主义
 perversi,邪ᴾᴵ
 filateli,邮ᶠᴵ
@@ -3371,7 +3372,7 @@ sangvin,乐ˢ
 hedon,乐ᴴ
 orkestr,乐ᴼ
 plezur,乐ᴾ
-hedonist,乐家
+optimist,乐家
 moviment,乐章
 meloman,乐迷
 multiplik,乘ᴹ
@@ -5757,7 +5758,7 @@ klimat,气候
 aeroplan,气划
 fluorid,气化
 aerogram,气图
-aerologi,气学
+meteologi,气学
 atmosferografi,气志
 aerostat,气态
 aerometri,气测
@@ -6884,7 +6885,7 @@ enter,肠ᴱ
 intest,肠ᴵ
 jejun,肠ᴶ
 mortadel,肠ᴹ
-ileit,肠炎
+enterit,肠炎
 enteralgi,肠痛
 katgut,肠线
 akci,股ᴬ
@@ -7778,7 +7779,7 @@ diaskop,通镜
 ekspres,速ᴱ
 taki,速ᵀ
 takikardi,速心
-takimetr,速计
+rapidometr,速计
 takigraf,速记
 bulvard,道ᴮ
 drom,道ᴰ
@@ -8197,7 +8198,7 @@ buljon,高汤
 altometri,高测
 orgasm,高潮
 sorg,高粱
-altimetr,高计
+altometr,高计
 fascin,魅ᶠ
 diabl,魔ᴰ
 magi,魔ᴹ
@@ -8433,6 +8434,7 @@ te,神ᵀ
 salping,管ˢ
 salpingit,管炎
 stok,粘ˢ
+mili,粟ᴹ
 file,线ᶠ
 klor,绿ᴷ
 al,翼ᴬ
@@ -9475,7 +9477,7 @@ venen,毒
 ol,比
 har,毛
 felt,毡
-milimetr,毫
+mili,毫
 tapiŝ,毯
 popol,民
 aer,气
