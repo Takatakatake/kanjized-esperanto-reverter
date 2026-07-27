@@ -8910,6 +8910,7 @@ ink,墨,0,ink,2574
 sokl,墩,0,sokl,6838
 mur,壁,0,mur,1266
 kavalir,士,0,kavalir,6140
+non,壬,0,non,26
 son,声,0,son,1352
 ŝel,壳,0,ŝel,4372
 pot,壶,0,pot,3855
@@ -9085,6 +9086,7 @@ dev,应,0,dev,768
 fund,底,0,fund,2178
 butik,店,0,butik,3636
 templ,庙,0,templ,4896
+hept,庚,0,hept,25
 rub,废,0,rub,5181
 grad,度,0,grad,3400
 ing,座,0,ing,232
@@ -10557,11 +10559,15 @@ naz,鼻,0,naz,1793
 dent,齿,0,dent,1527
 drak,龙,0,drak,6228
 testud,龟,0,testud,5370
+but,丁,1,but,22
 ar,亩,1,ar,144
 graf,伯,1,graf,2
 peon,佃,1,peon,169
 pat,困,1,pat,132
 rod,泊,1,rod,159
 sol,溶,1,sol,154
+dek,癸,1,dek,27
 prim,祷,1,prim,163
 mi,肌,1,mi,52
+okt,辛,1,okt,24
+pent,戊,2,pent,23
